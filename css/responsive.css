@@ -163,16 +163,15 @@
 /* =========================
    EXPERIENCE RESPONSIVE
 ========================= */
-/* =========================
-   EXPERIENCE RESPONSIVE FIX
-========================= */
 
-@media (max-width: 992px) {
+@media (max-width: 1130px) {
   .experience-container {
     grid-template-columns: 1fr;
     gap: 60px;
   }
+}
 
+@media (max-width: 992px) {
   .experience-content {
     width: 100%;
   }
@@ -421,5 +420,52 @@
 
   .luxury-card span {
     font-size: 16px;
+  }
+}
+
+/* =========================
+   PACKAGES RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+  .packages-section {
+    padding: 90px 20px;
+  }
+
+  .packages-top {
+    margin-bottom: 50px;
+  }
+
+  .packages-top h2 {
+    font-size: 40px;
+  }
+
+  .packages-top p {
+    font-size: 15px;
+  }
+
+  .package-card {
+    border-radius: 24px;
+  }
+
+  .package-nav-btn {
+    width: 56px;
+    height: 56px;
+
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .packages-top h2 {
+    font-size: 32px;
+  }
+
+  .package-price {
+    font-size: 38px;
+  }
+
+  .package-card h3 {
+    font-size: 28px;
   }
 }
