@@ -277,3 +277,373 @@ howItWorks.forEach((item) => {
 
   howGrid.appendChild(card);
 });
+
+/* =========================
+   HOW IT WORKS ANIMATION
+========================= */
+
+const howCards = document.querySelectorAll(".how-card");
+const howSection = document.querySelector(".how-grid");
+
+/* PROGRESS LINE CREATE */
+
+const progressLine = document.createElement("div");
+progressLine.classList.add("how-progress-line");
+
+howSection.appendChild(progressLine);
+
+let activeIndex = 0;
+
+function animateSteps() {
+  howCards.forEach((card) => {
+    card.classList.remove("active");
+  });
+
+  howCards[activeIndex].classList.add("active");
+
+  /* LINE WIDTH */
+
+  if (activeIndex === 0) {
+    progressLine.style.width = "18%";
+  }
+
+  if (activeIndex === 1) {
+    progressLine.style.width = "50%";
+  }
+
+  if (activeIndex === 2) {
+    progressLine.style.width = "80%";
+  }
+
+  activeIndex++;
+
+  if (activeIndex >= howCards.length) {
+    activeIndex = 0;
+  }
+}
+
+/* START */
+
+animateSteps();
+
+setInterval(animateSteps, 2200);
+
+/* =========================
+   TESTIMONIAL DATA
+========================= */
+
+const testimonials = [
+  {
+    name: "Olivia Carter",
+    role: "Luxury Traveler",
+    image: "https://randomuser.me/api/portraits/women/44.jpg",
+
+    review:
+      "Absolutely unforgettable experience. The boat was luxurious, easy to drive, and the sunset views across the Gold Coast were breathtaking.",
+
+    rating: 5,
+  },
+
+  {
+    name: "Daniel Smith",
+    role: "Family Trip",
+    image: "https://randomuser.me/api/portraits/men/32.jpg",
+
+    review:
+      "Everything was perfectly organized. My family loved the BBQ setup and premium sound system onboard. Highly recommended experience.",
+
+    rating: 5,
+  },
+
+  {
+    name: "Sophia Williams",
+    role: "Couples Escape",
+    image: "https://randomuser.me/api/portraits/women/68.jpg",
+
+    review:
+      "One of the most relaxing luxury experiences we've had. Smooth booking process and an amazing self-drive adventure.",
+
+    rating: 5,
+  },
+
+  {
+    name: "James Anderson",
+    role: "Adventure Guest",
+    image: "https://randomuser.me/api/portraits/men/76.jpg",
+
+    review:
+      "The boat was super modern and beginner friendly. Coastal routes were stunning and the entire journey felt premium.",
+
+    rating: 5,
+  },
+
+  {
+    name: "Emily Johnson",
+    role: "Weekend Cruise",
+    image: "https://randomuser.me/api/portraits/women/90.jpg",
+
+    review:
+      "Beautiful experience from start to finish. The atmosphere, music system, and luxury vibe made our day unforgettable.",
+
+    rating: 5,
+  },
+];
+
+/* =========================
+   RENDER TESTIMONIALS
+========================= */
+
+const testimonialTrack = document.getElementById("testimonialTrack");
+
+testimonials.forEach((item, index) => {
+  const card = document.createElement("div");
+
+  card.className = `testimonial-card ${index === 1 ? "active" : ""}`;
+
+  card.innerHTML = `
+  
+    <div class="testimonial-quote">
+      <i class="ri-double-quotes-r"></i>
+    </div>
+
+    <div class="testimonial-user">
+      <img src="${item.image}" alt="${item.name}" />
+
+      <div class="testimonial-user-info">
+        <h4>${item.name}</h4>
+        <span>${item.role}</span>
+      </div>
+    </div>
+
+    <p class="testimonial-text">
+      ${item.review}
+    </p>
+
+    <div class="testimonial-rating">
+      ${Array(item.rating)
+        .fill()
+        .map(() => `<i class="ri-star-fill"></i>`)
+        .join("")}
+    </div>
+  
+  `;
+
+  testimonialTrack.appendChild(card);
+});
+/* =========================
+   TESTIMONIAL INFINITE SLIDER
+========================= */
+
+const testimonialPrev = document.querySelector(".testimonial-prev");
+const testimonialNext = document.querySelector(".testimonial-next");
+
+let testimonialIndex = 0;
+let autoSlide;
+
+/* DUPLICATE CARDS FOR INFINITE LOOP */
+
+const testimonialCardsHTML = testimonialTrack.innerHTML;
+
+/* duplicate */
+testimonialTrack.innerHTML += testimonialCardsHTML;
+
+/* visible cards */
+
+function getVisibleCards() {
+  if (window.innerWidth <= 768) return 1;
+  if (window.innerWidth <= 1100) return 2;
+  return 3;
+}
+
+/* UPDATE */
+
+function updateTestimonials(animate = true) {
+  const cards = document.querySelectorAll(".testimonial-card");
+
+  const gap = 28;
+
+  const cardWidth = cards[0].offsetWidth + gap;
+
+  gsap.to(testimonialTrack, {
+    x: -(testimonialIndex * cardWidth),
+    duration: animate ? 1 : 0,
+    ease: "power3.inOut",
+  });
+
+  /* ACTIVE CARD */
+
+  cards.forEach((card) => {
+    card.classList.remove("active");
+  });
+
+  const activeCard = cards[testimonialIndex];
+
+  if (activeCard) {
+    activeCard.classList.add("active");
+  }
+}
+
+/* NEXT */
+
+function nextSlide() {
+  const originalLength = testimonials.length;
+
+  testimonialIndex++;
+
+  updateTestimonials(true);
+
+  /* RESET WITHOUT JUMP */
+
+  if (testimonialIndex >= originalLength) {
+    setTimeout(() => {
+      testimonialIndex = 0;
+
+      updateTestimonials(false);
+    }, 1000);
+  }
+}
+
+/* PREV */
+
+function prevSlide() {
+  const originalLength = testimonials.length;
+
+  if (testimonialIndex <= 0) {
+    testimonialIndex = originalLength;
+
+    updateTestimonials(false);
+  }
+
+  testimonialIndex--;
+
+  updateTestimonials(true);
+}
+
+/* AUTO */
+
+function startAutoSlide() {
+  stopAutoSlide();
+
+  autoSlide = setInterval(() => {
+    nextSlide();
+  }, 3500);
+}
+
+function stopAutoSlide() {
+  clearInterval(autoSlide);
+}
+
+/* BUTTONS */
+
+testimonialNext.addEventListener("click", () => {
+  nextSlide();
+  startAutoSlide();
+});
+
+testimonialPrev.addEventListener("click", () => {
+  prevSlide();
+  startAutoSlide();
+});
+
+/* HOVER PAUSE */
+
+testimonialTrack.addEventListener("mouseenter", stopAutoSlide);
+
+testimonialTrack.addEventListener("mouseleave", startAutoSlide);
+
+/* RESIZE */
+
+window.addEventListener("resize", () => {
+  updateTestimonials(false);
+});
+
+/* INIT */
+
+updateTestimonials(false);
+startAutoSlide();
+
+/* =========================
+   FAQ DATA
+========================= */
+
+const faqs = [
+  {
+    question: "Do I need a boat license?",
+    answer:
+      "No license is required. Our boats are beginner-friendly and we provide a full safety briefing before your cruise starts.",
+  },
+
+  {
+    question: "How many people are allowed?",
+    answer:
+      "Our luxury self-drive boats can accommodate up to 10 guests comfortably depending on the selected package.",
+  },
+
+  {
+    question: "What happens if the weather is bad?",
+    answer:
+      "If weather conditions are unsafe, we will help you reschedule your booking or provide alternative options.",
+  },
+
+  {
+    question: "Can I bring food & drinks?",
+    answer:
+      "Yes. You are welcome to bring your own food and drinks. We also provide an ice box and BBQ setup on selected packages.",
+  },
+];
+
+/* =========================
+   RENDER FAQ
+========================= */
+
+const faqContainer = document.getElementById("faqContainer");
+
+faqs.forEach((faq, index) => {
+  const item = document.createElement("div");
+
+  item.className = `faq-item ${index === 0 ? "active" : ""}`;
+
+  item.innerHTML = `
+    
+    <div class="faq-question">
+      
+      <div class="faq-number">
+        0${index + 1}
+      </div>
+
+      <h3>${faq.question}</h3>
+
+      <div class="faq-icon">
+        <i class="ri-add-line"></i>
+      </div>
+
+    </div>
+
+    <div class="faq-answer">
+      <p>${faq.answer}</p>
+    </div>
+
+  `;
+
+  faqContainer.appendChild(item);
+});
+
+/* =========================
+   FAQ ACCORDION
+========================= */
+
+const faqItems = document.querySelectorAll(".faq-item");
+
+faqItems.forEach((item) => {
+  const question = item.querySelector(".faq-question");
+
+  question.addEventListener("click", () => {
+    const activeItem = document.querySelector(".faq-item.active");
+
+    if (activeItem && activeItem !== item) {
+      activeItem.classList.remove("active");
+    }
+
+    item.classList.toggle("active");
+  });
+});

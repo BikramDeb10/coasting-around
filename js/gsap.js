@@ -50,3 +50,12 @@ gsap.from(".experience-content", {
   opacity: 0,
   duration: 1.2,
 });
+
+gsap.from(".faq-item", {
+  scrollTrigger: ".faq-section",
+  y: 80,
+  opacity: 0,
+  duration: 1,
+  stagger: 0.15,
+  ease: "power3.out",
+});
