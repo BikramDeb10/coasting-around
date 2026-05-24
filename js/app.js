@@ -197,6 +197,12 @@ const galleryItems = [
     title: "Adventure On Water",
     className: "wide",
   },
+  {
+    image:
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?q=80&w=1600&auto=format&fit=crop",
+    title: "Adventure On Water",
+    className: "wide",
+  },
 ];
 
 /* =========================
