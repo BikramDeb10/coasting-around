@@ -1,7 +1,3 @@
-/* =========================
-   STORY GALLERY DATA
-========================= */
-
 const storyImages = [
   {
     image:
@@ -49,7 +45,17 @@ storyImages.forEach((item) => {
   storyGallery.innerHTML += `
     
     <div class="swiper-slide">
-      <img src="${item.image}" alt="story image">
+    
+      <div class="story-image-wrap">
+      
+        <img src="${item.image}" alt="story image">
+
+        <div class="story-image-overlay">
+          <i class="ri-search-eye-line"></i>
+        </div>
+
+      </div>
+
     </div>
 
   `;
@@ -80,6 +86,90 @@ new Swiper(".ourStorySwiper", {
     },
 
     992: {
+      slidesPerView: 4,
+    },
+  },
+});
+
+/* =========================
+   IMAGE POPUP
+========================= */
+
+const imagePopup = document.getElementById("imagePopup");
+
+const popupImage = document.getElementById("popupImage");
+
+const popupClose = document.getElementById("popupClose");
+
+/* OPEN POPUP */
+
+document.querySelectorAll(".story-image-wrap").forEach((item) => {
+  item.addEventListener("click", () => {
+    const imageSrc = item.querySelector("img").src;
+
+    popupImage.src = imageSrc;
+
+    imagePopup.classList.add("active");
+
+    document.body.style.overflow = "hidden";
+  });
+});
+
+/* CLOSE POPUP */
+
+function closePopup() {
+  imagePopup.classList.remove("active");
+
+  document.body.style.overflow = "auto";
+}
+
+popupClose.addEventListener("click", closePopup);
+
+/* CLICK OUTSIDE */
+
+imagePopup.addEventListener("click", (e) => {
+  if (e.target === imagePopup) {
+    closePopup();
+  }
+});
+
+/* ESC BUTTON */
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    closePopup();
+  }
+});
+
+/* =========================
+   TEAM SWIPER
+========================= */
+
+new Swiper(".teamSwiper", {
+  slidesPerView: 4,
+  spaceBetween: 30,
+  loop: true,
+  speed: 1000,
+
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+  },
+
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+    },
+
+    600: {
+      slidesPerView: 2,
+    },
+
+    992: {
+      slidesPerView: 3,
+    },
+
+    1300: {
       slidesPerView: 4,
     },
   },
