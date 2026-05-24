@@ -82,81 +82,84 @@ const packages = [
 
 const packagesGrid = document.getElementById("packagesGrid");
 
-packages.forEach((pkg) => {
-  const slide = document.createElement("div");
+if (packagesGrid) {
+  packages.forEach((pkg) => {
+    const slide = document.createElement("div");
 
-  slide.className = "swiper-slide";
+    slide.className = "swiper-slide";
 
-  slide.innerHTML = `
-  
-    <div class="package-card ${pkg.featured ? "featured" : ""}">
-      
-      ${pkg.featured ? `<div class="package-badge">MOST POPULAR</div>` : ""}
+    slide.innerHTML = `
+    
+      <div class="package-card ${pkg.featured ? "featured" : ""}">
+        
+        ${pkg.featured ? `<div class="package-badge">MOST POPULAR</div>` : ""}
 
-      <span class="package-duration">${pkg.duration}</span>
+        <span class="package-duration">${pkg.duration}</span>
 
-      <h3>${pkg.title}</h3>
+        <h3>${pkg.title}</h3>
 
-      <div class="package-price">
-        ${pkg.price}
-        <span>/ package</span>
+        <div class="package-price">
+          ${pkg.price}
+          <span>/ package</span>
+        </div>
+
+        <p class="package-desc">
+          ${pkg.desc}
+        </p>
+
+        <ul class="package-features">
+          ${pkg.features
+            .map(
+              (feature) => `
+                <li>
+                  <i class="ri-check-line"></i>
+                  ${feature}
+                </li>
+              `,
+            )
+            .join("")}
+        </ul>
+
+        <a href="#" class="package-btn">
+          Book This Package
+        </a>
       </div>
+    `;
 
-      <p class="package-desc">
-        ${pkg.desc}
-      </p>
-
-      <ul class="package-features">
-        ${pkg.features
-          .map(
-            (feature) => `
-              <li>
-                <i class="ri-check-line"></i>
-                ${feature}
-              </li>
-            `,
-          )
-          .join("")}
-      </ul>
-
-      <a href="#" class="package-btn">
-        Book This Package
-      </a>
-    </div>
-  `;
-
-  packagesGrid.appendChild(slide);
-});
-
+    packagesGrid.appendChild(slide);
+  });
+}
 /* SWIPER */
 
-const swiper = new Swiper(".packagesSwiper", {
-  slidesPerView: 1.1,
-  spaceBetween: 28,
+if (document.querySelector(".packagesSwiper")) {
+  const swiper = new Swiper(".packagesSwiper", {
+    slidesPerView: 1.1,
+    spaceBetween: 28,
 
-  loop: false,
-  speed: 900,
-  centeredSlides: false,
+    loop: false,
+    speed: 900,
+    centeredSlides: false,
 
-  navigation: {
-    nextEl: ".package-next",
-    prevEl: ".package-prev",
-  },
-
-  breakpoints: {
-    640: {
-      slidesPerView: 1.4,
+    navigation: {
+      nextEl: ".package-next",
+      prevEl: ".package-prev",
     },
 
-    900: {
-      slidesPerView: 2.2,
-    },
+    breakpoints: {
+      640: {
+        slidesPerView: 1.4,
+      },
 
-    1200: {
-      slidesPerView: 3.4,
+      900: {
+        slidesPerView: 2.2,
+      },
+
+      1200: {
+        slidesPerView: 3.4,
+      },
     },
-  },
-});
+  });
+}
 
 /* =========================
    GALLERY DATA
@@ -209,28 +212,34 @@ const galleryItems = [
    RENDER GALLERY
 ========================= */
 
+/* =========================
+   RENDER GALLERY
+========================= */
+
 const galleryGrid = document.getElementById("galleryGrid");
 
-galleryItems.forEach((item) => {
-  const galleryCard = document.createElement("div");
+if (galleryGrid) {
+  galleryItems.forEach((item) => {
+    const galleryCard = document.createElement("div");
 
-  galleryCard.className = `gallery-item ${item.className}`;
+    galleryCard.className = `gallery-item ${item.className}`;
 
-  galleryCard.innerHTML = `
-    
-      <img
-        src="${item.image}"
-        alt="${item.title}"
-      />
+    galleryCard.innerHTML = `
+      
+        <img
+          src="${item.image}"
+          alt="${item.title}"
+        />
 
-      <div class="gallery-overlay">
-        <span>${item.title}</span>
-      </div>
-    
-  `;
+        <div class="gallery-overlay">
+          <span>${item.title}</span>
+        </div>
+      
+    `;
 
-  galleryGrid.appendChild(galleryCard);
-});
+    galleryGrid.appendChild(galleryCard);
+  });
+}
 
 /* =========================
    HOW IT WORKS DATA
@@ -261,78 +270,78 @@ const howItWorks = [
 
 const howGrid = document.getElementById("howGrid");
 
-howItWorks.forEach((item) => {
-  const card = document.createElement("div");
+/* CHECK FIRST */
 
-  card.className = "how-card";
+if (howGrid) {
+  howItWorks.forEach((item) => {
+    const card = document.createElement("div");
 
-  card.innerHTML = `
-  
-    <span class="how-step">${item.step}</span>
+    card.className = "how-card";
 
-    <div class="how-icon">
-      <i class="${item.icon}"></i>
-    </div>
+    card.innerHTML = `
+    
+      <span class="how-step">${item.step}</span>
 
-    <h3>${item.title}</h3>
+      <div class="how-icon">
+        <i class="${item.icon}"></i>
+      </div>
 
-    <p>
-      ${item.desc}
-    </p>
-  `;
+      <h3>${item.title}</h3>
 
-  howGrid.appendChild(card);
-});
+      <p>
+        ${item.desc}
+      </p>
+    `;
 
-/* =========================
-   HOW IT WORKS ANIMATION
-========================= */
-
-const howCards = document.querySelectorAll(".how-card");
-const howSection = document.querySelector(".how-grid");
-
-/* PROGRESS LINE CREATE */
-
-const progressLine = document.createElement("div");
-progressLine.classList.add("how-progress-line");
-
-howSection.appendChild(progressLine);
-
-let activeIndex = 0;
-
-function animateSteps() {
-  howCards.forEach((card) => {
-    card.classList.remove("active");
+    howGrid.appendChild(card);
   });
 
-  howCards[activeIndex].classList.add("active");
+  /* =========================
+     HOW IT WORKS ANIMATION
+  ========================= */
 
-  /* LINE WIDTH */
+  const howCards = document.querySelectorAll(".how-card");
 
-  if (activeIndex === 0) {
-    progressLine.style.width = "18%";
+  const progressLine = document.createElement("div");
+
+  progressLine.classList.add("how-progress-line");
+
+  howGrid.appendChild(progressLine);
+
+  let activeIndex = 0;
+
+  function animateSteps() {
+    howCards.forEach((card) => {
+      card.classList.remove("active");
+    });
+
+    if (howCards[activeIndex]) {
+      howCards[activeIndex].classList.add("active");
+    }
+
+    if (activeIndex === 0) {
+      progressLine.style.width = "18%";
+    }
+
+    if (activeIndex === 1) {
+      progressLine.style.width = "50%";
+    }
+
+    if (activeIndex === 2) {
+      progressLine.style.width = "80%";
+    }
+
+    activeIndex++;
+
+    if (activeIndex >= howCards.length) {
+      activeIndex = 0;
+    }
   }
 
-  if (activeIndex === 1) {
-    progressLine.style.width = "50%";
-  }
+  animateSteps();
 
-  if (activeIndex === 2) {
-    progressLine.style.width = "80%";
-  }
-
-  activeIndex++;
-
-  if (activeIndex >= howCards.length) {
-    activeIndex = 0;
-  }
+  setInterval(animateSteps, 2200);
 }
-
-/* START */
-
-animateSteps();
-
-setInterval(animateSteps, 2200);
 
 /* =========================
    TESTIMONIAL DATA
@@ -399,175 +408,157 @@ const testimonials = [
    RENDER TESTIMONIALS
 ========================= */
 
-const testimonialTrack = document.getElementById("testimonialTrack");
-
-testimonials.forEach((item, index) => {
-  const card = document.createElement("div");
-
-  card.className = `testimonial-card ${index === 1 ? "active" : ""}`;
-
-  card.innerHTML = `
-  
-    <div class="testimonial-quote">
-      <i class="ri-double-quotes-r"></i>
-    </div>
-
-    <div class="testimonial-user">
-      <img src="${item.image}" alt="${item.name}" />
-
-      <div class="testimonial-user-info">
-        <h4>${item.name}</h4>
-        <span>${item.role}</span>
-      </div>
-    </div>
-
-    <p class="testimonial-text">
-      ${item.review}
-    </p>
-
-    <div class="testimonial-rating">
-      ${Array(item.rating)
-        .fill()
-        .map(() => `<i class="ri-star-fill"></i>`)
-        .join("")}
-    </div>
-  
-  `;
-
-  testimonialTrack.appendChild(card);
-});
 /* =========================
-   TESTIMONIAL INFINITE SLIDER
+   RENDER TESTIMONIALS
 ========================= */
 
-const testimonialPrev = document.querySelector(".testimonial-prev");
-const testimonialNext = document.querySelector(".testimonial-next");
+const testimonialTrack = document.getElementById("testimonialTrack");
 
-let testimonialIndex = 0;
-let autoSlide;
+if (testimonialTrack) {
+  testimonials.forEach((item, index) => {
+    const card = document.createElement("div");
 
-/* DUPLICATE CARDS FOR INFINITE LOOP */
+    card.className = `testimonial-card ${index === 1 ? "active" : ""}`;
 
-const testimonialCardsHTML = testimonialTrack.innerHTML;
+    card.innerHTML = `
+    
+      <div class="testimonial-quote">
+        <i class="ri-double-quotes-r"></i>
+      </div>
 
-/* duplicate */
-testimonialTrack.innerHTML += testimonialCardsHTML;
+      <div class="testimonial-user">
+        <img src="${item.image}" alt="${item.name}" />
 
-/* visible cards */
+        <div class="testimonial-user-info">
+          <h4>${item.name}</h4>
+          <span>${item.role}</span>
+        </div>
+      </div>
 
-function getVisibleCards() {
-  if (window.innerWidth <= 768) return 1;
-  if (window.innerWidth <= 1100) return 2;
-  return 3;
-}
+      <p class="testimonial-text">
+        ${item.review}
+      </p>
 
-/* UPDATE */
+      <div class="testimonial-rating">
+        ${Array(item.rating)
+          .fill()
+          .map(() => `<i class="ri-star-fill"></i>`)
+          .join("")}
+      </div>
+    
+    `;
 
-function updateTestimonials(animate = true) {
-  const cards = document.querySelectorAll(".testimonial-card");
-
-  const gap = 28;
-
-  const cardWidth = cards[0].offsetWidth + gap;
-
-  gsap.to(testimonialTrack, {
-    x: -(testimonialIndex * cardWidth),
-    duration: animate ? 1 : 0,
-    ease: "power3.inOut",
+    testimonialTrack.appendChild(card);
   });
 
-  /* ACTIVE CARD */
+  /* =========================
+     TESTIMONIAL INFINITE SLIDER
+  ========================= */
 
-  cards.forEach((card) => {
-    card.classList.remove("active");
-  });
+  const testimonialPrev = document.querySelector(".testimonial-prev");
+  const testimonialNext = document.querySelector(".testimonial-next");
 
-  const activeCard = cards[testimonialIndex];
+  let testimonialIndex = 0;
+  let autoSlide;
 
-  if (activeCard) {
-    activeCard.classList.add("active");
+  const testimonialCardsHTML = testimonialTrack.innerHTML;
+
+  testimonialTrack.innerHTML += testimonialCardsHTML;
+
+  function updateTestimonials(animate = true) {
+    const cards = document.querySelectorAll(".testimonial-card");
+
+    if (!cards.length) return;
+
+    const gap = 28;
+
+    const cardWidth = cards[0].offsetWidth + gap;
+
+    gsap.to(testimonialTrack, {
+      x: -(testimonialIndex * cardWidth),
+      duration: animate ? 1 : 0,
+      ease: "power3.inOut",
+    });
+
+    cards.forEach((card) => {
+      card.classList.remove("active");
+    });
+
+    const activeCard = cards[testimonialIndex];
+
+    if (activeCard) {
+      activeCard.classList.add("active");
+    }
   }
-}
 
-/* NEXT */
+  function nextSlide() {
+    const originalLength = testimonials.length;
 
-function nextSlide() {
-  const originalLength = testimonials.length;
+    testimonialIndex++;
 
-  testimonialIndex++;
+    updateTestimonials(true);
 
-  updateTestimonials(true);
+    if (testimonialIndex >= originalLength) {
+      setTimeout(() => {
+        testimonialIndex = 0;
 
-  /* RESET WITHOUT JUMP */
+        updateTestimonials(false);
+      }, 1000);
+    }
+  }
 
-  if (testimonialIndex >= originalLength) {
-    setTimeout(() => {
-      testimonialIndex = 0;
+  function prevSlide() {
+    const originalLength = testimonials.length;
+
+    if (testimonialIndex <= 0) {
+      testimonialIndex = originalLength;
 
       updateTestimonials(false);
-    }, 1000);
+    }
+
+    testimonialIndex--;
+
+    updateTestimonials(true);
   }
-}
 
-/* PREV */
+  function startAutoSlide() {
+    stopAutoSlide();
 
-function prevSlide() {
-  const originalLength = testimonials.length;
+    autoSlide = setInterval(() => {
+      nextSlide();
+    }, 3500);
+  }
 
-  if (testimonialIndex <= 0) {
-    testimonialIndex = originalLength;
+  function stopAutoSlide() {
+    clearInterval(autoSlide);
+  }
 
+  if (testimonialNext) {
+    testimonialNext.addEventListener("click", () => {
+      nextSlide();
+      startAutoSlide();
+    });
+  }
+
+  if (testimonialPrev) {
+    testimonialPrev.addEventListener("click", () => {
+      prevSlide();
+      startAutoSlide();
+    });
+  }
+
+  testimonialTrack.addEventListener("mouseenter", stopAutoSlide);
+
+  testimonialTrack.addEventListener("mouseleave", startAutoSlide);
+
+  window.addEventListener("resize", () => {
     updateTestimonials(false);
-  }
+  });
 
-  testimonialIndex--;
-
-  updateTestimonials(true);
-}
-
-/* AUTO */
-
-function startAutoSlide() {
-  stopAutoSlide();
-
-  autoSlide = setInterval(() => {
-    nextSlide();
-  }, 3500);
-}
-
-function stopAutoSlide() {
-  clearInterval(autoSlide);
-}
-
-/* BUTTONS */
-
-testimonialNext.addEventListener("click", () => {
-  nextSlide();
-  startAutoSlide();
-});
-
-testimonialPrev.addEventListener("click", () => {
-  prevSlide();
-  startAutoSlide();
-});
-
-/* HOVER PAUSE */
-
-testimonialTrack.addEventListener("mouseenter", stopAutoSlide);
-
-testimonialTrack.addEventListener("mouseleave", startAutoSlide);
-
-/* RESIZE */
-
-window.addEventListener("resize", () => {
   updateTestimonials(false);
-});
 
-/* INIT */
-
-updateTestimonials(false);
-startAutoSlide();
-
+  startAutoSlide();
+}
 /* =========================
    FAQ DATA
 ========================= */
@@ -604,52 +595,50 @@ const faqs = [
 
 const faqContainer = document.getElementById("faqContainer");
 
-faqs.forEach((faq, index) => {
-  const item = document.createElement("div");
+if (faqContainer) {
+  faqs.forEach((faq, index) => {
+    const item = document.createElement("div");
 
-  item.className = `faq-item ${index === 0 ? "active" : ""}`;
+    item.className = `faq-item ${index === 0 ? "active" : ""}`;
 
-  item.innerHTML = `
-    
-    <div class="faq-question">
+    item.innerHTML = `
       
-      <div class="faq-number">
-        0${index + 1}
+      <div class="faq-question">
+        
+        <div class="faq-number">
+          0${index + 1}
+        </div>
+
+        <h3>${faq.question}</h3>
+
+        <div class="faq-icon">
+          <i class="ri-add-line"></i>
+        </div>
+
       </div>
 
-      <h3>${faq.question}</h3>
-
-      <div class="faq-icon">
-        <i class="ri-add-line"></i>
+      <div class="faq-answer">
+        <p>${faq.answer}</p>
       </div>
 
-    </div>
+    `;
 
-    <div class="faq-answer">
-      <p>${faq.answer}</p>
-    </div>
-
-  `;
-
-  faqContainer.appendChild(item);
-});
-
-/* =========================
-   FAQ ACCORDION
-========================= */
-
-const faqItems = document.querySelectorAll(".faq-item");
-
-faqItems.forEach((item) => {
-  const question = item.querySelector(".faq-question");
-
-  question.addEventListener("click", () => {
-    const activeItem = document.querySelector(".faq-item.active");
-
-    if (activeItem && activeItem !== item) {
-      activeItem.classList.remove("active");
-    }
-
-    item.classList.toggle("active");
+    faqContainer.appendChild(item);
   });
-});
+
+  const faqItems = document.querySelectorAll(".faq-item");
+
+  faqItems.forEach((item) => {
+    const question = item.querySelector(".faq-question");
+
+    question.addEventListener("click", () => {
+      const activeItem = document.querySelector(".faq-item.active");
+
+      if (activeItem && activeItem !== item) {
+        activeItem.classList.remove("active");
+      }
+
+      item.classList.toggle("active");
+    });
+  });
+}
