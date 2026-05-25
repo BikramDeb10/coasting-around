@@ -1105,3 +1105,159 @@
     font-size: 18px;
   }
 }
+
+/* =========================
+   TEAM MODAL
+========================= */
+
+.team-modal {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.75);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  z-index: 99999;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition: 0.4s ease;
+}
+
+/* ACTIVE */
+
+.team-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* BOX */
+
+.team-modal-box {
+  width: 100%;
+  max-width: 950px;
+
+  background: white;
+
+  display: grid;
+  grid-template-columns: 420px 1fr;
+
+  position: relative;
+
+  overflow: hidden;
+
+  transform: translateY(40px);
+
+  transition: 0.4s ease;
+}
+
+.team-modal.active .team-modal-box {
+  transform: translateY(0);
+}
+
+/* IMAGE */
+
+.team-modal-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+}
+
+/* CONTENT */
+
+.team-modal-content {
+  padding: 70px 60px;
+}
+
+.team-modal-content h3 {
+  font-size: 42px;
+
+  color: #08254d;
+
+  margin-bottom: 14px;
+
+  font-family: "Poppins", sans-serif;
+}
+
+.team-modal-content span {
+  display: inline-block;
+
+  color: #d61a72;
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+  margin-bottom: 28px;
+}
+
+.team-modal-content p {
+  color: #666;
+
+  line-height: 2;
+
+  font-size: 16px;
+}
+
+/* CLOSE BUTTON */
+
+.team-modal-close {
+  position: absolute;
+
+  top: 18px;
+  right: 18px;
+
+  width: 55px;
+  height: 55px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: #d61a72;
+
+  color: white;
+
+  font-size: 28px;
+
+  cursor: pointer;
+
+  z-index: 10;
+
+  transition: 0.4s ease;
+}
+
+.team-modal-close:hover {
+  transform: rotate(90deg);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+  .team-modal-box {
+    grid-template-columns: 1fr;
+  }
+
+  .team-modal-image img {
+    height: 320px;
+  }
+
+  .team-modal-content {
+    padding: 40px 28px;
+  }
+
+  .team-modal-content h3 {
+    font-size: 30px;
+  }
+}

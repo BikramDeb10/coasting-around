@@ -45,10 +45,10 @@
           <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="aboutus.html">About</a></li>
-            <li><a href="#">Packages</a></li>
+            <li><a href="">Packages</a></li>
             <li><a href="#">gallery</a></li>
 
-            <li><a href="#">Contact</a></li>
+            <li><a href="contact.html">Contact</a></li>
           </ul>
         </nav>
 
@@ -74,10 +74,12 @@
         </div>
 
         <ul class="mobile-links">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">FAQ</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="aboutus.html">About</a></li>
+          <li><a href="">Packages</a></li>
+          <li><a href="#">gallery</a></li>
+
+          <li><a href="contact.html">Contact</a></li>
         </ul>
 
         <a href="#" class="mobile-btn"> Book Now </a>
@@ -314,123 +316,32 @@
       <!-- TEAM SLIDER -->
 
       <div class="swiper teamSwiper">
-        <div class="swiper-wrapper">
-          <!-- CARD -->
-
-          <div class="swiper-slide">
-            <div class="team-card">
-              <div class="team-image">
-                <img
-                  src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=900&auto=format&fit=crop"
-                  alt=""
-                />
-              </div>
-
-              <div class="team-content">
-                <h4>Bradley Schoch</h4>
-
-                <p>Certified Sailing Instructor</p>
-
-                <div class="team-bottom">
-                  <a href="#" class="team-more">VIEW MORE</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- CARD -->
-
-          <div class="swiper-slide">
-            <div class="team-card">
-              <div class="team-image">
-                <img
-                  src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=900&auto=format&fit=crop"
-                  alt=""
-                />
-              </div>
-
-              <div class="team-content">
-                <h4>Andrew Clouston</h4>
-
-                <p>SVP Programs & Services</p>
-
-                <div class="team-bottom">
-                  <a href="#" class="team-more">VIEW MORE</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- CARD -->
-
-          <div class="swiper-slide">
-            <div class="team-card">
-              <div class="team-image">
-                <img
-                  src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=900&auto=format&fit=crop"
-                  alt=""
-                />
-              </div>
-
-              <div class="team-content">
-                <h4>Cecilia Mendez</h4>
-
-                <p>Certified Sailing Instructor</p>
-
-                <div class="team-bottom">
-                  <a href="#" class="team-more">VIEW MORE</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- CARD -->
-
-          <div class="swiper-slide">
-            <div class="team-card">
-              <div class="team-image">
-                <img
-                  src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=900&auto=format&fit=crop"
-                  alt=""
-                />
-              </div>
-
-              <div class="team-content">
-                <h4>Timothy Monahan</h4>
-
-                <p>Certified Sailing Instructor</p>
-
-                <div class="team-bottom">
-                  <a href="#" class="team-more">VIEW MORE</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="swiper-slide">
-            <div class="team-card">
-              <div class="team-image">
-                <img
-                  src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=900&auto=format&fit=crop"
-                  alt=""
-                />
-              </div>
-
-              <div class="team-content">
-                <h4>Timothy Monahan</h4>
-
-                <p>Certified Sailing Instructor</p>
-
-                <div class="team-bottom">
-                  <a href="#" class="team-more">VIEW MORE</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- MORE CARDS ADD HERE -->
-        </div>
+        <div class="swiper-wrapper" id="teamWrapper"></div>
       </div>
     </section>
+    <!-- =========================
+   TEAM MODAL
+========================= -->
+
+    <div class="team-modal" id="teamModal">
+      <div class="team-modal-box">
+        <button class="team-modal-close" id="teamModalClose">
+          <i class="ri-close-line"></i>
+        </button>
+
+        <div class="team-modal-image">
+          <img src="" alt="" id="modalTeamImage" />
+        </div>
+
+        <div class="team-modal-content">
+          <h3 id="modalTeamName"></h3>
+
+          <span id="modalTeamRole"></span>
+
+          <p id="modalTeamDescription"></p>
+        </div>
+      </div>
+    </div>
     <footer class="footer-section">
       <!-- FLOATING GLOW -->
       <div class="footer-glow footer-glow-1"></div>
@@ -473,11 +384,10 @@
           <h4>Quick Links</h4>
 
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
+            <li><a href="aboutus.html">About</a></li>
             <li><a href="#">Packages</a></li>
-            <li><a href="#">FAQ</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="#">Blogs</a></li>
+            <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
 
