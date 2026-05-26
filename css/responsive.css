@@ -195,7 +195,8 @@
   }
 
   .experience-container {
-    gap: 45px;
+    grid-template-columns: 1fr;
+    gap: 40px;
   }
 
   .experience-image img {
@@ -205,13 +206,17 @@
 
   .experience-badge {
     left: 18px;
-    bottom: 18px;
-    padding: 16px 20px;
-    border-radius: 18px;
+    top: 18px;
+
+    width: 140px;
+    min-height: 110px;
+
+    padding: 18px;
+    border-radius: 20px;
   }
 
   .experience-badge h3 {
-    font-size: 28px;
+    font-size: 32px;
   }
 
   .experience-badge p {
@@ -294,17 +299,18 @@
   }
 
   .experience-image img {
-    height: 320px;
+    height: 340px;
     border-radius: 20px;
   }
 
   .experience-badge {
+    width: 120px;
+    min-height: 95px;
+
+    padding: 14px;
+
     left: 14px;
-    bottom: 14px;
-
-    padding: 14px 16px;
-
-    border-radius: 16px;
+    top: 14px;
   }
 
   .experience-badge h3 {

@@ -237,9 +237,9 @@
 ========================= */
 
 .timeline-section {
-  background: #f5f5f5;
+  background: #0d1b2a;
 
-  padding: 0 8% 140px;
+  padding: 100px 8%;
 }
 
 .timeline-grid {
@@ -266,7 +266,7 @@
 
   border-radius: 50%;
 
-  border: 5px solid #d4af37;
+  border: 5px solid #f1c01d;
 
   border-left-color: #e6e6e6;
   border-bottom-color: #e6e6e6;
@@ -283,7 +283,7 @@
 
   font-weight: 700;
 
-  color: #08254d;
+  color: #ddb42f;
 
   font-family: "Poppins", sans-serif;
 }
@@ -291,7 +291,7 @@
 .timeline-item h5 {
   font-size: 14px;
 
-  color: #08254d;
+  color: #ffffff;
 
   margin-bottom: 14px;
 
@@ -299,7 +299,7 @@
 }
 
 .timeline-item p {
-  color: #777;
+  color: #cfcfcf;
 
   line-height: 1.8;
 
@@ -376,9 +376,9 @@
   }
 
   .timeline-section {
-    background: #f5f5f5;
+    background: #0d1b2a;
 
-    padding: 0 8% 60px;
+    padding: 60px 8%;
   }
 }
 
@@ -877,7 +877,7 @@
 }
 
 .team-card:hover .team-content h4 {
-  color: #d61a72;
+  color: #d8ad21;
 }
 
 .team-content p {
@@ -898,61 +898,26 @@
   justify-content: space-between;
 }
 
-/* SOCIAL */
-
-.team-socials {
-  display: flex;
-
-  align-items: center;
-
-  gap: 12px;
-}
-
-.team-socials a {
-  width: 46px;
-  height: 46px;
-
-  border-radius: 50%;
-
-  border: 1px solid #d61a72;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  text-decoration: none;
-
-  color: #d61a72;
-
-  font-size: 20px;
-
-  transition: 0.4s ease;
-}
-
-.team-socials a:hover {
-  background: #d61a72;
-
-  color: white;
-
-  transform: translateY(-4px);
-}
-
 /* VIEW MORE */
 
 .team-more {
   text-decoration: none;
 
-  color: #d61a72;
+  color: #f1c01d;
 
   font-size: 15px;
 
-  font-weight: 700;
+  font-weight: 600;
 
   letter-spacing: 1px;
 
   position: relative;
 
   transition: 0.4s ease;
+}
+
+.team-more:hover {
+  color: #08254d;
 }
 
 .team-more::after {
@@ -967,7 +932,7 @@
 
   height: 2px;
 
-  background: #d61a72;
+  background: #08254d;
 
   transition: 0.4s ease;
 }

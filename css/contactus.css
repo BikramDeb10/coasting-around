@@ -6,6 +6,7 @@
   z-index: 10;
 
   padding: 0 8%;
+  margin-bottom: 30px;
 }
 
 .contact-info-grid {
@@ -29,11 +30,14 @@
 
   text-align: center;
 
-  border-radius: 24px;
+  border-radius: 24px 24px 150px 150px;
 
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
 
   transition: 0.4s ease;
+  border: 10px solid #d4af37;
+  border-top: none;
+  border-left: none;
 }
 
 .contact-info-card:hover {
@@ -82,7 +86,7 @@
 ========================= */
 
 .contact-form-section {
-  padding: 140px 8%;
+  padding: 100px 8%;
 
   background: #f7f7f7;
 }
