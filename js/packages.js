@@ -43,42 +43,6 @@ const packagesData = [
       "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?q=80&w=1200",
     description: "Explore hidden islands.",
   },
-
-  {
-    title: "Premium Package",
-    price: "$499",
-    duration: "6 Hours",
-    image:
-      "https://images.unsplash.com/photo-1512100356356-de1b84283e18?q=80&w=1200",
-    description: "VIP experience package.",
-  },
-
-  {
-    title: "Night Cruise",
-    price: "$350",
-    duration: "4 Hours",
-    image:
-      "https://images.unsplash.com/photo-1518837695005-2083093ee35b?q=80&w=1200",
-    description: "Luxury night experience.",
-  },
-
-  {
-    title: "Couple Special",
-    price: "$450",
-    duration: "3 Hours",
-    image:
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200",
-    description: "Romantic experience package.",
-  },
-
-  {
-    title: "Ocean Adventure",
-    price: "$550",
-    duration: "7 Hours",
-    image:
-      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200",
-    description: "Ultimate sea adventure.",
-  },
 ];
 
 const cardsPerPage = 8;
