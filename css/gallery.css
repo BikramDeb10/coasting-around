@@ -1,0 +1,317 @@
+.gallery-page-section {
+  position: relative;
+
+  padding: 120px 8%;
+
+  background: linear-gradient(180deg, #ffffff 0%, #f7f9fc 50%, #ffffff 100%);
+
+  overflow: hidden;
+}
+
+/* =========================
+BACKGROUND GLOW
+========================= */
+
+.gallery-page-glow {
+  position: absolute;
+
+  border-radius: 50%;
+
+  filter: blur(100px);
+
+  z-index: 0;
+}
+
+.gallery-page-glow-1 {
+  width: 350px;
+  height: 350px;
+
+  background: rgba(0, 132, 255, 0.08);
+
+  top: -100px;
+  left: -120px;
+
+  animation: galleryFloat 8s ease-in-out infinite;
+}
+
+.gallery-page-glow-2 {
+  width: 300px;
+  height: 300px;
+
+  background: rgba(0, 183, 255, 0.08);
+
+  bottom: -120px;
+  right: -120px;
+
+  animation: galleryFloat 10s ease-in-out infinite;
+}
+
+@keyframes galleryFloat {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(30px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* =========================
+CONTAINER
+========================= */
+
+.gallery-page-container {
+  position: relative;
+
+  z-index: 2;
+}
+
+/* =========================
+TOP CONTENT
+========================= */
+
+.gallery-page-top {
+  text-align: center;
+
+  max-width: 850px;
+
+  margin: auto auto 70px;
+}
+
+.gallery-page-subtitle {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 12px 22px;
+
+  border-radius: 100px;
+
+  background: rgba(0, 132, 255, 0.08);
+
+  color: #0084ff;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  letter-spacing: 1px;
+
+  margin-bottom: 22px;
+
+  animation: galleryFadeUp 1s ease;
+}
+
+.gallery-page-top h2 {
+  font-size: 62px;
+
+  line-height: 1.08;
+
+  color: #081420;
+
+  margin-bottom: 20px;
+
+  font-weight: 800;
+
+  animation: galleryFadeUp 1s ease 0.2s both;
+}
+
+.gallery-page-top p {
+  color: #64748b;
+
+  line-height: 1.9;
+
+  font-size: 17px;
+
+  animation: galleryFadeUp 1s ease 0.4s both;
+}
+
+/* =========================
+REAL MASONRY GALLERY
+========================= */
+
+.gallery-page-grid {
+  column-count: 3;
+
+  column-gap: 24px;
+}
+
+/* =========================
+GALLERY ITEM
+========================= */
+
+.gallery-page-item {
+  position: relative;
+
+  display: inline-block;
+
+  width: 100%;
+
+  margin-bottom: 24px;
+
+  overflow: hidden;
+
+  border-radius: 28px;
+
+  background: #ffffff;
+
+  break-inside: avoid;
+
+  box-shadow:
+    0 10px 40px rgba(15, 23, 42, 0.06),
+    0 2px 10px rgba(15, 23, 42, 0.04);
+
+  transition: 0.45s ease;
+
+  animation: galleryFadeUp 1s ease both;
+}
+
+/* IMPORTANT:
+Image je size e ashbe
+card o shei size e hobe
+No fixed height
+No grid row height issue
+*/
+
+.gallery-page-item img {
+  width: 100%;
+
+  height: auto;
+
+  display: block;
+
+  object-fit: unset;
+
+  transition: 0.7s ease;
+}
+
+/* =========================
+OVERLAY
+========================= */
+
+.gallery-page-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 10%,
+    rgba(0, 0, 0, 0.45) 100%
+  );
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  opacity: 0;
+
+  transition: 0.45s ease;
+}
+
+.gallery-page-overlay i {
+  width: 72px;
+  height: 72px;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  background: rgba(255, 255, 255, 0.15);
+
+  backdrop-filter: blur(12px);
+
+  color: white;
+
+  font-size: 34px;
+
+  transform: scale(0.7);
+
+  transition: 0.4s ease;
+}
+
+/* =========================
+HOVER EFFECT
+========================= */
+
+.gallery-page-item:hover {
+  transform: translateY(-8px);
+}
+
+.gallery-page-item:hover img {
+  transform: scale(1.03);
+}
+
+.gallery-page-item:hover .gallery-page-overlay {
+  opacity: 1;
+}
+
+.gallery-page-item:hover .gallery-page-overlay i {
+  transform: scale(1);
+}
+
+/* =========================
+ANIMATION
+========================= */
+
+@keyframes galleryFadeUp {
+  from {
+    opacity: 0;
+
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+RESPONSIVE
+========================= */
+
+@media (max-width: 992px) {
+  .gallery-page-grid {
+    column-count: 2;
+  }
+
+  .gallery-page-top h2 {
+    font-size: 46px;
+  }
+}
+
+@media (max-width: 576px) {
+  .gallery-page-section {
+    padding: 90px 5%;
+  }
+
+  .gallery-page-grid {
+    column-count: 1;
+
+    column-gap: 18px;
+  }
+
+  .gallery-page-top h2 {
+    font-size: 36px;
+  }
+
+  .gallery-page-item {
+    margin-bottom: 18px;
+
+    border-radius: 22px;
+  }
+}

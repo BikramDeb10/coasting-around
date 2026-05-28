@@ -234,11 +234,7 @@ WHITE LUXURY UI
 
   border-radius: 24px;
 
-  background: linear-gradient(
-    135deg,
-    rgba(0, 132, 255, 0.12),
-    rgba(0, 194, 255, 0.08)
-  );
+  background: linear-gradient(135deg, #cea5203b, #dfac0633);
 
   display: flex;
 
@@ -248,7 +244,7 @@ WHITE LUXURY UI
 
   margin-bottom: 28px;
 
-  color: #0084ff;
+  color: #e9b200;
 
   font-size: 34px;
 
