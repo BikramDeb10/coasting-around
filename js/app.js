@@ -12,6 +12,40 @@ if (menuToggle && mobileMenu && closeMenu) {
   });
 }
 
+/* =========================
+   STICKY MODERN NAVBAR
+========================= */
+
+const navbar = document.querySelector(".navbar");
+
+let lastScroll = 0;
+
+window.addEventListener("scroll", () => {
+  const currentScroll = window.pageYOffset;
+
+  /* ADD SCROLLED STYLE */
+
+  if (currentScroll > 40) {
+    navbar.classList.add("scrolled");
+  } else {
+    navbar.classList.remove("scrolled");
+  }
+
+  /* HIDE / SHOW NAVBAR */
+
+  if (currentScroll > lastScroll && currentScroll > 120) {
+    navbar.classList.add("hide-nav");
+
+    navbar.classList.remove("show-nav");
+  } else {
+    navbar.classList.remove("hide-nav");
+
+    navbar.classList.add("show-nav");
+  }
+
+  lastScroll = currentScroll;
+});
+
 const packages = [
   {
     duration: "1 Hour",

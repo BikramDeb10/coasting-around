@@ -222,28 +222,7 @@
 
 .contact-submit {
   border: none;
-
-  padding: 18px 34px;
-
-  background: #d4af37;
-
-  color: white;
-
-  font-weight: 700;
-
-  letter-spacing: 1px;
-
   cursor: pointer;
-
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-
-  transition: 0.4s ease;
-}
-
-.contact-submit:hover {
-  transform: translateY(-4px);
 }
 
 /* =========================
@@ -311,27 +290,6 @@
 }
 
 .contact-cta-btn {
-  display: inline-flex;
-
-  align-items: center;
-
-  gap: 10px;
-
-  padding: 18px 36px;
-
-  background: #d4af37;
-
-  color: white;
-
-  text-decoration: none;
-
-  font-weight: 700;
-
-  transition: 0.4s ease;
-}
-
-.contact-cta-btn:hover {
-  transform: translateY(-5px);
 }
 
 /* =========================

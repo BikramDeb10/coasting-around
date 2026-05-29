@@ -352,3 +352,45 @@ document.addEventListener("keydown", (e) => {
     closeTeamModal();
   }
 });
+
+gsap.registerPlugin(ScrollTrigger);
+
+const timelineItems = document.querySelectorAll(".timeline-item");
+
+timelineItems.forEach((item) => {
+  const counter = item.querySelector(".counter");
+
+  const target = +counter.dataset.count;
+
+  let started = false;
+
+  ScrollTrigger.create({
+    trigger: item,
+
+    start: "top 85%",
+
+    onEnter: () => {
+      if (started) return;
+
+      started = true;
+
+      // ACTIVE CLASS
+      item.classList.add("active");
+
+      // COUNTER ANIMATION
+      gsap.to(counter, {
+        innerText: target,
+
+        duration: 2,
+
+        snap: { innerText: 1 },
+
+        ease: "power3.out",
+
+        onUpdate: function () {
+          counter.innerText = Math.floor(counter.innerText);
+        },
+      });
+    },
+  });
+});

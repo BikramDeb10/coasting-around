@@ -148,18 +148,28 @@
   max-width: 480px;
 }
 
+/* =========================
+   STORY BUTTON
+========================= */
+
 .story-btn {
+  position: relative;
+
   display: inline-flex;
 
   align-items: center;
 
-  gap: 10px;
+  justify-content: center;
 
-  padding: 16px 30px;
+  gap: 12px;
+
+  padding: 18px 34px;
+
+  border-radius: 60px;
 
   background: #dfb734;
 
-  color: white;
+  color: #ffffff;
 
   text-decoration: none;
 
@@ -167,13 +177,57 @@
 
   font-weight: 700;
 
+  letter-spacing: 1px;
+
+  overflow: hidden;
+
+  z-index: 1;
+
+  transition: 0.45s ease;
+}
+
+/* HOVER OVERLAY */
+
+.story-btn::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 0%;
+
+  height: 100%;
+
+  background: #08254d;
+
+  z-index: -1;
+
+  transition: width 0.45s ease;
+}
+
+/* ICON */
+
+.story-btn i {
+  font-size: 18px;
+
   transition: 0.4s ease;
 }
 
-.story-btn:hover {
-  transform: translateY(-4px);
+/* HOVER */
+
+.story-btn:hover::before {
+  width: 100%;
 }
 
+.story-btn:hover {
+  color: #ffffff;
+}
+
+.story-btn:hover i {
+  transform: translateX(4px);
+}
 .story-right {
   position: relative;
 
@@ -276,6 +330,36 @@
   justify-content: center;
 
   background: white;
+
+  transform: scale(0.4);
+
+  opacity: 0;
+
+  transition: 0.8s ease;
+}
+
+/* ACTIVE */
+
+.timeline-item.active .timeline-circle {
+  transform: scale(1);
+
+  opacity: 1;
+}
+
+/* RING ROTATE */
+
+.timeline-item.active .timeline-circle {
+  animation: rotateRing 2s ease;
+}
+
+@keyframes rotateRing {
+  0% {
+    transform: scale(0.4) rotate(-180deg);
+  }
+
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
 }
 
 .timeline-circle span {
@@ -289,7 +373,7 @@
 }
 
 .timeline-item h5 {
-  font-size: 14px;
+  font-size: 20px;
 
   color: #ffffff;
 
