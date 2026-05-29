@@ -1393,6 +1393,85 @@ body {
   transition: 0.4s;
 }
 
+.seemore-gallery-btn {
+  position: relative;
+
+  width: fit-content;
+
+  margin: 60px auto 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  padding: 18px 34px;
+
+  border-radius: 60px;
+
+  background: #dfb734;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+
+  overflow: hidden;
+
+  z-index: 1;
+
+  transition: 0.45s ease;
+}
+
+/* HOVER OVERLAY */
+
+.seemore-gallery-btn::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 0%;
+  height: 100%;
+
+  background: #08254d;
+
+  z-index: -1;
+
+  transition: width 0.45s ease;
+}
+
+/* ICON */
+
+.seemore-gallery-btn i {
+  font-size: 18px;
+
+  transition: 0.4s ease;
+}
+
+/* HOVER */
+
+.seemore-gallery-btn:hover::before {
+  width: 100%;
+}
+
+.seemore-gallery-btn:hover {
+  color: #ffffff;
+
+  transform: translateY(-4px);
+}
+
+.seemore-gallery-btn:hover i {
+  transform: translateX(4px);
+}
 /* =========================
    RESPONSIVE
 ========================= */
