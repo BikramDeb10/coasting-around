@@ -103,17 +103,51 @@ body {
 }
 
 .nav-btn {
+  position: relative;
+
   padding: 14px 28px;
-  background: var(--secondary);
-  color: var(--black);
-  text-decoration: none;
+
   border-radius: 50px;
+
+  text-decoration: none;
+
   font-weight: 600;
+
+  color: white;
+
+  border: 1px solid var(--secondary);
+
+  overflow: hidden;
+
+  z-index: 1;
+
   transition: 0.4s;
 }
 
+.nav-btn::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 0%;
+  height: 100%;
+
+  background: var(--secondary);
+
+  transition: width 0.45s ease;
+
+  z-index: -1;
+}
+
+.nav-btn:hover::before {
+  width: 100%;
+}
+
 .nav-btn:hover {
-  transform: translateY(-3px);
+  color: black;
 }
 
 .hero-content {
@@ -1456,18 +1490,6 @@ body {
   font-size: 17px;
 
   transition: 0.45s ease;
-
-  box-shadow: 0 18px 45px rgba(212, 175, 55, 0.28);
-}
-
-.cta-btn i {
-  font-size: 20px;
-}
-
-.cta-btn:hover {
-  transform: translateY(-6px) scale(1.02);
-
-  box-shadow: 0 24px 60px rgba(212, 175, 55, 0.4);
 }
 
 .how-top {
