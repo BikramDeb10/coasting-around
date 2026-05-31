@@ -199,183 +199,177 @@ if (document.querySelector(".packagesSwiper")) {
    GALLERY DATA
 ========================= */
 
-const galleryItems = [
-  {
-    image:
-      "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?q=80&w=1600&auto=format&fit=crop",
-    title: "Luxury Cruise",
-    className: "large",
-  },
+// const galleryItems = [
+//   {
+//     image:
+//       "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?q=80&w=1600&auto=format&fit=crop",
+//     title: "Luxury Cruise",
+//     className: "large",
+//   },
 
-  {
-    image:
-      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200&auto=format&fit=crop",
-    title: "Ocean Escape",
-    className: "",
-  },
+//   {
+//     image:
+//       "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200&auto=format&fit=crop",
+//     title: "Ocean Escape",
+//     className: "",
+//   },
 
-  {
-    image:
-      "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?q=80&w=1200&auto=format&fit=crop",
-    title: "Sunset Moments",
-    className: "tall",
-  },
+//   {
+//     image:
+//       "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?q=80&w=1200&auto=format&fit=crop",
+//     title: "Sunset Moments",
+//     className: "tall",
+//   },
 
-  {
-    image:
-      "https://images.unsplash.com/photo-1493558103817-58b2924bce98?q=80&w=1200&auto=format&fit=crop",
-    title: "Premium Lifestyle",
-    className: "",
-  },
+//   {
+//     image:
+//       "https://images.unsplash.com/photo-1493558103817-58b2924bce98?q=80&w=1200&auto=format&fit=crop",
+//     title: "Premium Lifestyle",
+//     className: "",
+//   },
 
-  {
-    image:
-      "https://images.unsplash.com/photo-1519046904884-53103b34b206?q=80&w=1600&auto=format&fit=crop",
-    title: "Adventure On Water",
-    className: "wide",
-  },
-  {
-    image:
-      "https://images.unsplash.com/photo-1519046904884-53103b34b206?q=80&w=1600&auto=format&fit=crop",
-    title: "Adventure On Water",
-    className: "wide",
-  },
-];
+//   {
+//     image:
+//       "https://images.unsplash.com/photo-1519046904884-53103b34b206?q=80&w=1600&auto=format&fit=crop",
+//     title: "Adventure On Water",
+//     className: "wide",
+//   },
+//   {
+//     image:
+//       "https://images.unsplash.com/photo-1519046904884-53103b34b206?q=80&w=1600&auto=format&fit=crop",
+//     title: "Adventure On Water",
+//     className: "wide",
+//   },
+// ];
 
-/* =========================
-   RENDER GALLERY
-========================= */
+// /* =========================
+//    RENDER GALLERY
+// ========================= */
 
-/* =========================
-   RENDER GALLERY
-========================= */
+// /* =========================
+//    RENDER GALLERY
+// ========================= */
 
-const galleryGrid = document.getElementById("galleryGrid");
+// const galleryGrid = document.getElementById("galleryGrid");
 
-if (galleryGrid) {
-  galleryItems.forEach((item) => {
-    const galleryCard = document.createElement("div");
+// if (galleryGrid) {
+//   galleryItems.forEach((item) => {
+//     const galleryCard = document.createElement("div");
 
-    galleryCard.className = `gallery-item ${item.className}`;
+//     galleryCard.className = `gallery-item ${item.className}`;
 
-    galleryCard.innerHTML = `
-      
-        <img
-          src="${item.image}"
-          alt="${item.title}"
-        />
+//     galleryCard.innerHTML = `
 
-        <div class="gallery-overlay">
-          <span>${item.title}</span>
-        </div>
-      
-    `;
+//         <img
+//           src="${item.image}"
+//           alt="${item.title}"
+//         />
 
-    galleryGrid.appendChild(galleryCard);
-  });
-}
+//         <div class="gallery-overlay">
+//           <span>${item.title}</span>
+//         </div>
 
-/* =========================
-   HOW IT WORKS DATA
-========================= */
+//     `;
 
-const howItWorks = [
-  {
-    step: "01",
-    icon: "ri-ship-line",
-    title: "Choose Package",
-    desc: "Select your preferred luxury self-drive boat package based on duration, guests, and experience style.",
-  },
+//     galleryGrid.appendChild(galleryCard);
+//   });
+// }
 
-  {
-    step: "02",
-    icon: "ri-calendar-check-line",
-    title: "Book Online",
-    desc: "Secure your booking online in minutes with our easy reservation process and instant confirmation.",
-  },
+// /* =========================
+//    HOW IT WORKS DATA
+// ========================= */
 
-  {
-    step: "03",
-    icon: "ri-sailboat-line",
-    title: "Enjoy Your Cruise",
-    desc: "Arrive, get a quick safety briefing, and enjoy an unforgettable luxury cruise across coastal waters.",
-  },
-];
+// const howItWorks = [
+//   {
+//     step: "01",
+//     icon: "ri-ship-line",
+//     title: "Choose Package",
+//     desc: "Select your preferred luxury self-drive boat package based on duration, guests, and experience style.",
+//   },
 
-const howGrid = document.getElementById("howGrid");
+//   {
+//     step: "02",
+//     icon: "ri-calendar-check-line",
+//     title: "Book Online",
+//     desc: "Secure your booking online in minutes with our easy reservation process and instant confirmation.",
+//   },
 
-/* CHECK FIRST */
+//   {
+//     step: "03",
+//     icon: "ri-sailboat-line",
+//     title: "Enjoy Your Cruise",
+//     desc: "Arrive, get a quick safety briefing, and enjoy an unforgettable luxury cruise across coastal waters.",
+//   },
+// ];
 
-if (howGrid) {
-  howItWorks.forEach((item) => {
-    const card = document.createElement("div");
+// const howGrid = document.getElementById("howGrid");
 
-    card.className = "how-card";
+// if (howGrid) {
+//   howItWorks.forEach((item) => {
+//     const card = document.createElement("div");
 
-    card.innerHTML = `
-    
-      <span class="how-step">${item.step}</span>
+//     card.className = "how-card";
 
-      <div class="how-icon">
-        <i class="${item.icon}"></i>
-      </div>
+//     card.innerHTML = `
 
-      <h3>${item.title}</h3>
+//       <span class="how-step">${item.step}</span>
 
-      <p>
-        ${item.desc}
-      </p>
-    `;
+//       <div class="how-icon">
+//         <i class="${item.icon}"></i>
+//       </div>
 
-    howGrid.appendChild(card);
-  });
+//       <h3>${item.title}</h3>
 
-  /* =========================
-     HOW IT WORKS ANIMATION
-  ========================= */
+//       <p>
+//         ${item.desc}
+//       </p>
+//     `;
 
-  const howCards = document.querySelectorAll(".how-card");
+//     howGrid.appendChild(card);
+//   });
 
-  const progressLine = document.createElement("div");
+//   const howCards = document.querySelectorAll(".how-card");
 
-  progressLine.classList.add("how-progress-line");
+//   const progressLine = document.createElement("div");
 
-  howGrid.appendChild(progressLine);
+//   progressLine.classList.add("how-progress-line");
 
-  let activeIndex = 0;
+//   howGrid.appendChild(progressLine);
 
-  function animateSteps() {
-    howCards.forEach((card) => {
-      card.classList.remove("active");
-    });
+//   let activeIndex = 0;
 
-    if (howCards[activeIndex]) {
-      howCards[activeIndex].classList.add("active");
-    }
+//   function animateSteps() {
+//     howCards.forEach((card) => {
+//       card.classList.remove("active");
+//     });
 
-    if (activeIndex === 0) {
-      progressLine.style.width = "18%";
-    }
+//     if (howCards[activeIndex]) {
+//       howCards[activeIndex].classList.add("active");
+//     }
 
-    if (activeIndex === 1) {
-      progressLine.style.width = "50%";
-    }
+//     if (activeIndex === 0) {
+//       progressLine.style.width = "18%";
+//     }
 
-    if (activeIndex === 2) {
-      progressLine.style.width = "80%";
-    }
+//     if (activeIndex === 1) {
+//       progressLine.style.width = "50%";
+//     }
 
-    activeIndex++;
+//     if (activeIndex === 2) {
+//       progressLine.style.width = "80%";
+//     }
 
-    if (activeIndex >= howCards.length) {
-      activeIndex = 0;
-    }
-  }
+//     activeIndex++;
 
-  animateSteps();
+//     if (activeIndex >= howCards.length) {
+//       activeIndex = 0;
+//     }
+//   }
 
-  setInterval(animateSteps, 2200);
-}
+//   animateSteps();
+
+//   setInterval(animateSteps, 2200);
+// }
 
 /* =========================
    TESTIMONIAL DATA

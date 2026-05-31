@@ -1,3 +1,11 @@
+/* Font ti import kora hocche */
+@font-face {
+  font-family: "Aldine401 BT";
+  src: url("/Aldine401\ BT\ Bold/") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
 :root {
   --primary: #0d1b2a;
   --secondary: #d4af37;
@@ -122,9 +130,10 @@ body {
 }
 
 .logo {
-  color: var(--white);
+  color: var(--secondary);
+
   font-size: 24px;
-  font-family: "Poppins", sans-serif;
+  font-family: "Aldine401 BT", serif;
   font-weight: 700;
 }
 
@@ -590,10 +599,10 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-.feature-text p {
+.featuretext-p {
   margin: 0;
 
-  color: #6b7280;
+  color: #22314d;
 
   font-size: 15px;
 
@@ -601,53 +610,97 @@ body {
 }
 
 .luxury-card {
-  justify-content: center;
+  position: relative;
 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
 
-  flex-direction: column;
-
   text-align: center;
-
-  background: linear-gradient(135deg, #d4af37, #f5deb3);
-
-  border: none;
+  text-decoration: none;
 
   min-height: 220px;
 
-  box-shadow: 0 18px 50px rgba(212, 175, 55, 0.22);
+  padding: 30px;
+
+  border-radius: 26px;
+
+  background: linear-gradient(135deg, #cc990e 0%, #e9c153 50%, #cc990e 100%);
+
+  border: 1px solid rgba(212, 175, 55, 0.25);
+
+  overflow: hidden;
+
+  transition: all 0.45s ease;
+
+  box-shadow: 0 20px 50px rgba(8, 18, 32, 0.15);
 }
 
-.luxury-icon {
-  margin-bottom: 18px;
+.luxury-card::before {
+  content: "";
 
-  background: rgba(255, 255, 255, 0.22);
+  position: absolute;
 
-  border: 1px solid rgba(255, 255, 255, 0.35);
+  width: 180px;
+  height: 180px;
 
-  color: white;
+  top: -60px;
+  right: -60px;
 
-  box-shadow: none;
+  border-radius: 50%;
+
+  background: rgba(212, 175, 55, 0.12);
+
+  filter: blur(20px);
 }
 
-.luxury-icon i {
+.luxury-card:hover {
+  transform: translateY(-8px);
+
+  border-color: rgba(212, 175, 55, 0.6);
+
+  box-shadow: 0 25px 60px rgba(212, 175, 55, 0.2);
+}
+
+.brand-label {
+  color: rgba(255, 255, 255, 0.65);
+
+  font-size: 12px;
+
+  letter-spacing: 4px;
+
+  text-transform: uppercase;
+
+  margin-bottom: 14px;
+
+  position: relative;
+  z-index: 2;
+}
+
+.luxury-card h3 {
+  color: #ffffff;
+
   font-size: 34px;
-}
 
-.luxury-card span {
-  color: white;
+  line-height: 1.1;
 
-  font-size: 24px;
-
-  text-align: center;
-
-  line-height: 1.4;
+  margin-bottom: 12px;
 
   font-family: "Poppins", sans-serif;
 
-  max-width: 240px;
+  font-weight: 700;
 
-  font-weight: 600;
+  position: relative;
+  z-index: 2;
+}
+
+.luxury-card p {
+  color: #0d1b2a !important;
+  font-size: 16px;
+  margin: 0;
+  position: relative;
+  z-index: 2;
 }
 
 .feature-card h4 {
@@ -664,6 +717,7 @@ body {
   font-size: 14px;
   color: #b8c7d6;
 }
+
 /* =========================
    PACKAGES SECTION
 ========================= */
@@ -970,6 +1024,42 @@ body {
   background: var(--secondary);
 
   color: black;
+}
+
+.addon-list {
+  list-style: none;
+  margin: 10px 0 0;
+  padding: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.addon-list li {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+
+  padding-bottom: 10px;
+  border-bottom: 1px dashed #e5e7eb;
+}
+
+.addon-list li:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.addon-list strong {
+  font-size: 14px;
+  color: #1b356b;
+  font-weight: 600;
+}
+
+.addon-list span {
+  font-size: 13px;
+  color: #6b7280;
+  line-height: 1.4;
 }
 
 /* =========================
@@ -1544,7 +1634,7 @@ body {
 /* =========================
    HOW IT WORKS SECTION
 ========================= */
-
+/* 
 .how-section {
   position: relative;
   padding: 130px 8%;
@@ -1611,7 +1701,7 @@ body {
   transition: 0.45s ease;
 }
 
-/* SLIDING BACKGROUND */
+
 
 .cta-btn::before {
   content: "";
@@ -1631,7 +1721,7 @@ body {
   z-index: -1;
 }
 
-/* HOVER */
+
 
 .cta-btn:hover::before {
   width: 100%;
@@ -1641,7 +1731,6 @@ body {
   color: #111827;
 }
 
-/* ICON */
 
 .cta-btn i {
   font-size: 20px;
@@ -1677,7 +1766,7 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-/* GRID */
+
 
 .how-grid {
   position: relative;
@@ -1728,7 +1817,7 @@ body {
   z-index: 2;
 }
 
-/* CARD */
+
 
 .how-card {
   position: relative;
@@ -1775,7 +1864,7 @@ body {
   opacity: 1;
 }
 
-/* ACTIVE CARD */
+
 
 .how-card.active {
   transform: translateY(-12px) scale(1.03);
@@ -1787,13 +1876,12 @@ body {
     0 25px 60px rgba(0, 0, 0, 0.35);
 }
 
-/* GOLD GLOW */
 
 .how-card.active::before {
   opacity: 1;
 }
 
-/* ICON PULSE */
+
 
 .how-card.active .how-icon {
   animation: pulseGlow 1.8s infinite;
@@ -1820,13 +1908,13 @@ body {
   }
 }
 
-/* STEP NUMBER ACTIVE */
+
 
 .how-card.active .how-step {
   color: rgba(212, 175, 55, 0.15);
 }
 
-/* STEP NUMBER */
+
 
 .how-step {
   position: absolute;
@@ -1845,7 +1933,7 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-/* ICON */
+
 
 .how-icon {
   width: 82px;
@@ -1886,7 +1974,6 @@ body {
   line-height: 1.8;
 }
 
-/* RESPONSIVE */
 
 @media (max-width: 992px) {
   .how-grid {
@@ -1943,7 +2030,7 @@ body {
   .how-step {
     font-size: 58px;
   }
-}
+} */
 
 /* =========================
    TESTIMONIAL SECTION
@@ -2332,8 +2419,6 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-/* FAQ CONTAINER */
-
 .faq-container {
   position: relative;
 
@@ -2348,8 +2433,6 @@ body {
 
   gap: 24px;
 }
-
-/* ITEM */
 
 .faq-item {
   position: relative;
@@ -2393,8 +2476,6 @@ body {
   opacity: 1;
 }
 
-/* ACTIVE */
-
 .faq-item.active {
   border-color: rgba(212, 175, 55, 0.4);
 
@@ -2408,8 +2489,6 @@ body {
     0 0 40px rgba(212, 175, 55, 0.08),
     0 20px 60px rgba(0, 0, 0, 0.35);
 }
-
-/* QUESTION */
 
 .faq-question {
   position: relative;
@@ -2451,8 +2530,6 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-/* ICON */
-
 .faq-icon {
   width: 62px;
   height: 62px;
@@ -2476,8 +2553,6 @@ body {
   transition: 0.5s ease;
 }
 
-/* ANSWER */
-
 .faq-answer {
   display: grid;
 
@@ -2498,8 +2573,6 @@ body {
   padding: 0 32px 0 126px;
 }
 
-/* ACTIVE ANIMATION */
-
 .faq-item.active .faq-answer {
   grid-template-rows: 1fr;
 }
@@ -2517,8 +2590,6 @@ body {
 
   box-shadow: 0 0 30px rgba(212, 175, 55, 0.45);
 }
-
-/* FLOATING GLOW */
 
 .faq-item.active::after {
   content: "";
@@ -2553,8 +2624,6 @@ body {
     transform: rotate(360deg) translateY(0px);
   }
 }
-
-/* RESPONSIVE */
 
 @media (max-width: 768px) {
   .faq-section {

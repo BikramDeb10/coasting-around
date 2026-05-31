@@ -1,4 +1,4 @@
-const galleryItems = document.querySelectorAll(".gallery-page-item");
+const galleryPageItems = document.querySelectorAll(".gallery-page-item");
 
 const lightbox = document.querySelector(".gallery-lightbox");
 const lightboxImage = document.querySelector(".lightbox-image");
@@ -13,7 +13,7 @@ let currentIndex = 0;
 
 const images = [];
 
-galleryItems.forEach((item) => {
+galleryPageItems.forEach((item) => {
   const img = item.querySelector("img");
 
   images.push(img.src);
@@ -21,7 +21,7 @@ galleryItems.forEach((item) => {
 
 /* OPEN LIGHTBOX */
 
-galleryItems.forEach((item, index) => {
+galleryPageItems.forEach((item, index) => {
   item.addEventListener("click", (e) => {
     e.preventDefault();
 

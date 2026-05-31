@@ -133,264 +133,242 @@
    TEAM DATA
 ========================= */
 
-const teamMembers = [
-  {
-    id: 1,
+// const teamMembers = [
+//   {
+//     id: 1,
 
-    name: "Bradley Schoch",
+//     name: "Bradley Schoch",
 
-    role: "Certified Sailing Instructor",
+//     role: "Certified Sailing Instructor",
 
-    image:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=900&auto=format&fit=crop",
+//     image:
+//       "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=900&auto=format&fit=crop",
 
-    description:
-      "Bradley has over 10 years of luxury sailing experience and specializes in premium coastal adventures and private yacht training.",
-  },
+//     description:
+//       "Bradley has over 10 years of luxury sailing experience and specializes in premium coastal adventures and private yacht training.",
+//   },
 
-  {
-    id: 2,
+//   {
+//     id: 2,
 
-    name: "Andrew Clouston",
+//     name: "Andrew Clouston",
 
-    role: "SVP Programs & Services",
+//     role: "SVP Programs & Services",
 
-    image:
-      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=900&auto=format&fit=crop",
+//     image:
+//       "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=900&auto=format&fit=crop",
 
-    description:
-      "Andrew manages guest programs, charter operations, and premium onboard experiences for all luxury packages.",
-  },
+//     description:
+//       "Andrew manages guest programs, charter operations, and premium onboard experiences for all luxury packages.",
+//   },
 
-  {
-    id: 3,
+//   {
+//     id: 3,
 
-    name: "Cecilia Mendez",
+//     name: "Cecilia Mendez",
 
-    role: "Certified Sailing Instructor",
+//     role: "Certified Sailing Instructor",
 
-    image:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=900&auto=format&fit=crop",
+//     image:
+//       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=900&auto=format&fit=crop",
 
-    description:
-      "Cecilia is passionate about ocean experiences and provides world-class sailing guidance for first-time guests.",
-  },
+//     description:
+//       "Cecilia is passionate about ocean experiences and provides world-class sailing guidance for first-time guests.",
+//   },
 
-  {
-    id: 4,
+//   {
+//     id: 4,
 
-    name: "Timothy Monahan",
+//     name: "Timothy Monahan",
 
-    role: "Certified Sailing Instructor",
+//     role: "Certified Sailing Instructor",
 
-    image:
-      "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=900&auto=format&fit=crop",
+//     image:
+//       "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=900&auto=format&fit=crop",
 
-    description:
-      "Timothy delivers unforgettable luxury boat experiences with a strong focus on safety and entertainment.",
-  },
+//     description:
+//       "Timothy delivers unforgettable luxury boat experiences with a strong focus on safety and entertainment.",
+//   },
 
-  {
-    id: 5,
+//   {
+//     id: 5,
 
-    name: "Timothy Monahan",
+//     name: "Timothy Monahan",
 
-    role: "Certified Sailing Instructor",
+//     role: "Certified Sailing Instructor",
 
-    image:
-      "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=900&auto=format&fit=crop",
+//     image:
+//       "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=900&auto=format&fit=crop",
 
-    description:
-      "Timothy delivers unforgettable luxury boat experiences with a strong focus on safety and entertainment.",
-  },
-];
+//     description:
+//       "Timothy delivers unforgettable luxury boat experiences with a strong focus on safety and entertainment.",
+//   },
+// ];
 
-/* =========================
-   RENDER TEAM CARDS
-========================= */
+// const teamWrapper = document.getElementById("teamWrapper");
 
-const teamWrapper = document.getElementById("teamWrapper");
+// teamMembers.forEach((member) => {
+//   teamWrapper.innerHTML += `
 
-teamMembers.forEach((member) => {
-  teamWrapper.innerHTML += `
-    
-    <div class="swiper-slide">
+//     <div class="swiper-slide">
 
-      <div class="team-card">
+//       <div class="team-card">
 
-        <div class="team-image">
-          <img src="${member.image}" alt="${member.name}" />
-        </div>
+//         <div class="team-image">
+//           <img src="${member.image}" alt="${member.name}" />
+//         </div>
 
-        <div class="team-content">
+//         <div class="team-content">
 
-          <h4>${member.name}</h4>
+//           <h4>${member.name}</h4>
 
-          <p>${member.role}</p>
+//           <p>${member.role}</p>
 
-          <div class="team-bottom">
+//           <div class="team-bottom">
 
-            <a href="#" 
-               class="team-more"
-               data-id="${member.id}">
-               VIEW MORE
-            </a>
+//             <a href="#"
+//                class="team-more"
+//                data-id="${member.id}">
+//                VIEW MORE
+//             </a>
 
-          </div>
+//           </div>
 
-        </div>
+//         </div>
 
-      </div>
+//       </div>
 
-    </div>
+//     </div>
 
-  `;
-});
+//   `;
+// });
 
-/* =========================
-   TEAM SWIPER
-========================= */
+// const teamSwiper = new Swiper(".teamSwiper", {
+//   slidesPerView: 4,
 
-const teamSwiper = new Swiper(".teamSwiper", {
-  slidesPerView: 4,
+//   spaceBetween: 30,
 
-  spaceBetween: 30,
+//   loop: teamMembers.length > 4,
 
-  loop: teamMembers.length > 4,
+//   speed: 1000,
 
-  speed: 1000,
+//   autoplay: {
+//     delay: 2500,
 
-  autoplay: {
-    delay: 2500,
+//     disableOnInteraction: false,
+//   },
 
-    disableOnInteraction: false,
-  },
+//   breakpoints: {
+//     0: {
+//       slidesPerView: 1,
+//     },
 
-  breakpoints: {
-    0: {
-      slidesPerView: 1,
-    },
+//     600: {
+//       slidesPerView: 2,
+//     },
 
-    600: {
-      slidesPerView: 2,
-    },
+//     992: {
+//       slidesPerView: 3,
+//     },
 
-    992: {
-      slidesPerView: 3,
-    },
+//     1300: {
+//       slidesPerView: 4,
+//     },
+//   },
+// });
 
-    1300: {
-      slidesPerView: 4,
-    },
-  },
-});
+// const teamModal = document.getElementById("teamModal");
 
-/* =========================
-   TEAM MODAL
-========================= */
+// const teamModalClose = document.getElementById("teamModalClose");
 
-const teamModal = document.getElementById("teamModal");
+// const modalTeamImage = document.getElementById("modalTeamImage");
 
-const teamModalClose = document.getElementById("teamModalClose");
+// const modalTeamName = document.getElementById("modalTeamName");
 
-const modalTeamImage = document.getElementById("modalTeamImage");
+// const modalTeamRole = document.getElementById("modalTeamRole");
 
-const modalTeamName = document.getElementById("modalTeamName");
+// const modalTeamDescription = document.getElementById("modalTeamDescription");
 
-const modalTeamRole = document.getElementById("modalTeamRole");
+// document.addEventListener("click", (e) => {
+//   if (e.target.classList.contains("team-more")) {
+//     e.preventDefault();
 
-const modalTeamDescription = document.getElementById("modalTeamDescription");
+//     const memberId = Number(e.target.dataset.id);
 
-/* OPEN MODAL */
+//     const member = teamMembers.find((item) => item.id === memberId);
 
-document.addEventListener("click", (e) => {
-  if (e.target.classList.contains("team-more")) {
-    e.preventDefault();
+//     if (!member) return;
 
-    const memberId = Number(e.target.dataset.id);
+//     modalTeamImage.src = member.image;
 
-    const member = teamMembers.find((item) => item.id === memberId);
+//     modalTeamName.textContent = member.name;
 
-    if (!member) return;
+//     modalTeamRole.textContent = member.role;
 
-    modalTeamImage.src = member.image;
+//     modalTeamDescription.textContent = member.description;
 
-    modalTeamName.textContent = member.name;
+//     teamModal.classList.add("active");
 
-    modalTeamRole.textContent = member.role;
+//     document.body.style.overflow = "hidden";
+//   }
+// });
 
-    modalTeamDescription.textContent = member.description;
+// function closeTeamModal() {
+//   teamModal.classList.remove("active");
 
-    teamModal.classList.add("active");
+//   document.body.style.overflow = "auto";
+// }
 
-    document.body.style.overflow = "hidden";
-  }
-});
+// teamModalClose.addEventListener("click", closeTeamModal);
 
-/* CLOSE MODAL */
+// teamModal.addEventListener("click", (e) => {
+//   if (e.target === teamModal) {
+//     closeTeamModal();
+//   }
+// });
 
-function closeTeamModal() {
-  teamModal.classList.remove("active");
+// document.addEventListener("keydown", (e) => {
+//   if (e.key === "Escape") {
+//     closeTeamModal();
+//   }
+// });
 
-  document.body.style.overflow = "auto";
-}
+// gsap.registerPlugin(ScrollTrigger);
 
-teamModalClose.addEventListener("click", closeTeamModal);
+// const timelineItems = document.querySelectorAll(".timeline-item");
 
-/* CLICK OUTSIDE */
+// timelineItems.forEach((item) => {
+//   const counter = item.querySelector(".counter");
 
-teamModal.addEventListener("click", (e) => {
-  if (e.target === teamModal) {
-    closeTeamModal();
-  }
-});
+//   const target = +counter.dataset.count;
 
-/* ESC BUTTON */
+//   let started = false;
 
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") {
-    closeTeamModal();
-  }
-});
+//   ScrollTrigger.create({
+//     trigger: item,
 
-gsap.registerPlugin(ScrollTrigger);
+//     start: "top 85%",
 
-const timelineItems = document.querySelectorAll(".timeline-item");
+//     onEnter: () => {
+//       if (started) return;
 
-timelineItems.forEach((item) => {
-  const counter = item.querySelector(".counter");
+//       started = true;
 
-  const target = +counter.dataset.count;
+//       item.classList.add("active");
 
-  let started = false;
+//       gsap.to(counter, {
+//         innerText: target,
 
-  ScrollTrigger.create({
-    trigger: item,
+//         duration: 2,
 
-    start: "top 85%",
+//         snap: { innerText: 1 },
 
-    onEnter: () => {
-      if (started) return;
+//         ease: "power3.out",
 
-      started = true;
-
-      // ACTIVE CLASS
-      item.classList.add("active");
-
-      // COUNTER ANIMATION
-      gsap.to(counter, {
-        innerText: target,
-
-        duration: 2,
-
-        snap: { innerText: 1 },
-
-        ease: "power3.out",
-
-        onUpdate: function () {
-          counter.innerText = Math.floor(counter.innerText);
-        },
-      });
-    },
-  });
-});
+//         onUpdate: function () {
+//           counter.innerText = Math.floor(counter.innerText);
+//         },
+//       });
+//     },
+//   });
+// });
