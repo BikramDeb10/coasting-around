@@ -2784,73 +2784,180 @@ RESPONSIVE
 .iphone {
   position: relative;
 
-  width: 340px;
+  width: 360px;
+  height: 740px;
 
-  height: 690px;
+  padding: 10px;
 
-  padding: 14px;
+  border-radius: 68px;
 
-  background: #111;
-
-  border-radius: 58px;
+  background: linear-gradient(
+    145deg,
+    #767676,
+    #1f1f1f 20%,
+    #909090 50%,
+    #1f1f1f 80%,
+    #6f6f6f
+  );
 
   box-shadow:
-    0 40px 80px rgba(0, 0, 0, 0.15),
-    0 20px 40px rgba(0, 0, 0, 0.08);
+    0 80px 120px rgba(0, 0, 0, 0.18),
+    0 35px 60px rgba(0, 0, 0, 0.12),
+    inset 0 2px 4px rgba(255, 255, 255, 0.2);
 
-  border: 3px solid #3d3d3d;
+  transform: perspective(1800px) rotateY(-10deg) rotateX(5deg);
+
+  transition: 0.6s ease;
 }
 
-.iphone::before {
-  content: "";
-
-  position: absolute;
-
-  inset: 4px;
-
-  border-radius: 52px;
-
-  border: 2px solid rgba(255, 255, 255, 0.08);
-}
-
-.iphone-notch {
-  position: absolute;
-
-  top: 16px;
-  left: 50%;
-
-  transform: translateX(-50%);
-
-  width: 130px;
-  height: 32px;
-
-  background: #000;
-
-  border-radius: 30px;
-
-  z-index: 10;
+.iphone:hover {
+  transform: perspective(1800px) rotateY(-4deg) rotateX(2deg) translateY(-12px);
 }
 
 .iphone-screen {
   position: relative;
 
+  width: 100%;
+  height: 100%;
+
   overflow: hidden;
 
-  border-radius: 44px;
+  border-radius: 58px;
 
-  width: 100%;
+  background: #000;
 
-  height: 100%;
+  border: 3px solid #0a0a0a;
 }
 
-.iphone-screen img {
+.iphone-screen iframe {
   width: 100%;
-
   height: 100%;
 
-  object-fit: cover;
+  border: none;
 }
 
+.dynamic-island {
+  position: absolute;
+
+  top: 18px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: 128px;
+  height: 34px;
+
+  background: #000;
+
+  border-radius: 30px;
+
+  z-index: 50;
+
+  box-shadow:
+    inset 0 1px 2px rgba(255, 255, 255, 0.05),
+    0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.dynamic-island::before {
+  content: "";
+
+  position: absolute;
+
+  right: 18px;
+  top: 10px;
+
+  width: 10px;
+  height: 10px;
+
+  border-radius: 50%;
+
+  background: #171717;
+}
+
+.dynamic-island::after {
+  content: "";
+
+  position: absolute;
+
+  left: 20px;
+  top: 11px;
+
+  width: 42px;
+  height: 8px;
+
+  border-radius: 10px;
+
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.home-indicator {
+  position: absolute;
+
+  bottom: 10px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: 140px;
+  height: 5px;
+
+  background: rgba(255, 255, 255, 0.95);
+
+  border-radius: 50px;
+
+  z-index: 20;
+}
+
+.screen-glare {
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.18) 0%,
+    rgba(255, 255, 255, 0.05) 20%,
+    transparent 40%
+  );
+
+  z-index: 10;
+}
+
+.iphone-side-btn {
+  position: absolute;
+
+  background: #5a5a5a;
+
+  border-radius: 20px;
+
+  z-index: 5;
+}
+
+.volume-up {
+  width: 5px;
+  height: 70px;
+
+  left: -4px;
+  top: 140px;
+}
+
+.volume-down {
+  width: 5px;
+  height: 70px;
+
+  left: -4px;
+  top: 230px;
+}
+
+.power-btn {
+  width: 5px;
+  height: 110px;
+
+  right: -4px;
+  top: 180px;
+}
 /* CONTENT */
 
 .tracking-content h2 {
@@ -2863,10 +2970,6 @@ RESPONSIVE
   margin: 20px 0;
 
   font-family: "Poppins", sans-serif;
-}
-
-.tracking-content h2 span {
-  color: #dfb734;
 }
 
 .tracking-content p {
@@ -2933,9 +3036,9 @@ RESPONSIVE
 
   padding: 18px 34px;
 
-  background: #08254d;
+  background: #d4af37;
 
-  color: white;
+  color: #111827;
 
   text-decoration: none;
 
@@ -2944,10 +3047,6 @@ RESPONSIVE
   font-weight: 700;
 
   transition: 0.4s;
-}
-
-.tracking-btn:hover {
-  transform: translateY(-5px);
 }
 
 .iphone-screen iframe {
@@ -3000,8 +3099,14 @@ RESPONSIVE
   }
 
   .iphone {
-    width: 280px;
-    height: 580px;
+    width: 290px;
+    height: 600px;
+
+    transform: none;
+  }
+
+  .iphone:hover {
+    transform: none;
   }
 
   .tracking-content h2 {
