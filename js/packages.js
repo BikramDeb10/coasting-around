@@ -5,7 +5,8 @@ const packagesData = [
     duration: "3 Hours",
     image:
       "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?q=80&w=1200",
-    description: "Premium luxury cruise experience.",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus debitis maxime error quod minus, adipisci porro? Sit minus neque quas, adipisci porro? Sit minus neque quas.",
   },
 
   {
@@ -14,7 +15,8 @@ const packagesData = [
     duration: "2 Hours",
     image:
       "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200",
-    description: "Enjoy beautiful sunset moments.",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus debitis maxime error quod minus, adipisci porro? Sit minus neque quas, adipisci porro? Sit minus neque quas.",
   },
 
   {
@@ -23,7 +25,8 @@ const packagesData = [
     duration: "5 Hours",
     image:
       "https://images.unsplash.com/photo-1519046904884-53103b34b206?q=80&w=1200",
-    description: "Perfect for family trips.",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus debitis maxime error quod minus, adipisci porro? Sit minus neque quas, adipisci porro? Sit minus neque quas.",
   },
 
   {
@@ -32,7 +35,8 @@ const packagesData = [
     duration: "8 Hours",
     image:
       "https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?q=80&w=1200",
-    description: "Luxury yacht with premium facilities.",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus debitis maxime error quod minus, adipisci porro? Sit minus neque quas, adipisci porro? Sit minus neque quas.",
   },
 
   {
@@ -41,7 +45,8 @@ const packagesData = [
     duration: "4 Hours",
     image:
       "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?q=80&w=1200",
-    description: "Explore hidden islands.",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus debitis maxime error quod minus, adipisci porro? Sit minus neque quas, adipisci porro? Sit minus neque quas.",
   },
 ];
 
@@ -79,7 +84,13 @@ function renderCards() {
 ${item.duration}
 </span>
 
+<div class="package-price-title">
 <h3>${item.title}</h3>
+<div class="package-price">
+${item.price}
+<span>/person</span>
+</div>
+</div>
 
 <p class="package-desc">
 ${item.description}
@@ -87,10 +98,7 @@ ${item.description}
 
 <div class="package-bottom">
 
-<div class="package-price">
-           ${item.price}
-           <span>/person</span>
-          </div>
+
 
             <button class="package-btn">
           Book Now
@@ -236,47 +244,4 @@ Buy Your Coupon
 </div>
 
 `;
-});
-
-const modal = document.getElementById("couponModal");
-
-document.addEventListener("click", function (e) {
-  if (e.target.classList.contains("buyCoupon")) {
-    modal.classList.add("active");
-  }
-});
-
-document.getElementById("closeModal").onclick = () => {
-  modal.classList.remove("active");
-};
-
-modal.onclick = (e) => {
-  if (e.target === modal) {
-    modal.classList.remove("active");
-  }
-};
-
-/* =========================
-FORM SUBMIT LOADER + REDIRECT
-========================= */
-
-const couponForm = document.querySelector(".coupon-form");
-
-couponForm.addEventListener("submit", function (e) {
-  e.preventDefault();
-
-  const submitBtn = couponForm.querySelector(".submit-btn");
-
-  // BUTTON LOADING STATE
-  submitBtn.innerHTML = `
-  <span class="btn-loader"></span>
-  Processing...
-  `;
-
-  submitBtn.disabled = true;
-
-  // REDIRECT AFTER 2 SECONDS
-  setTimeout(() => {
-    window.location.href = "thankyou.html";
-  }, 2000);
 });
