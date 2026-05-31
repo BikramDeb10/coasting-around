@@ -141,7 +141,7 @@
 
   border-radius: 50%;
 
-  background: white;
+  background: #d4af37;
 
   display: flex;
   align-items: center;
@@ -154,14 +154,6 @@
   font-size: 22px;
 
   transition: 0.4s ease;
-}
-
-.contact-socials a:hover {
-  background: #d4af37;
-
-  color: white;
-
-  transform: translateY(-5px);
 }
 
 /* FORM */
