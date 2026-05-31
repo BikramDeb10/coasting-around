@@ -147,6 +147,9 @@ PACKAGES PAGE
 
   gap: 15px;
 }
+.package-bottom .package-btn {
+  font-size: 16px;
+}
 
 .package-price {
   font-size: 28px;
@@ -392,7 +395,7 @@ COUPON CARDS UNIQUE UI
   border-radius: 16px;
 
   font-weight: 700;
-
+  font-size: 15px;
   transition: 0.4s;
   cursor: pointer;
 }

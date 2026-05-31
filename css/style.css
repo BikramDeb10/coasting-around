@@ -433,24 +433,26 @@ body {
 
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
 
-  width: 170px;
+  width: 200px;
 
   min-height: 140px;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 .experience-badge h3 {
   color: var(--secondary);
-  font-size: 42px;
+  font-size: 62px;
   font-family: "Poppins", sans-serif;
 }
 
 .experience-badge p {
   color: #1f2937;
-  font-size: 14px;
+  font-size: 18px;
+  font-weight: 700;
 }
 
 .section-subtitle {
@@ -583,6 +585,20 @@ body {
   line-height: 1;
 }
 
+.feature-card h4 {
+  color: #1b356b !important;
+
+  font-size: 18px;
+  margin-bottom: 6px;
+
+  font-family: "Poppins", sans-serif;
+}
+
+.feature-card p {
+  margin: 0;
+  font-size: 14px;
+  color: #b8c7d6;
+}
 .luxury-card {
   position: relative;
 
@@ -637,23 +653,13 @@ body {
   box-shadow: 0 25px 60px rgba(212, 175, 55, 0.2);
 }
 
-.brand-label {
-  color: rgba(255, 255, 255, 0.65);
-
-  font-size: 12px;
-
-  letter-spacing: 4px;
-
-  text-transform: uppercase;
-
-  margin-bottom: 14px;
-
-  position: relative;
-  z-index: 2;
+.luxury-card h5 {
+  color: rgb(255, 255, 255);
+  font-size: 20px;
 }
 
 .luxury-card h3 {
-  color: #ffffff;
+  color: #1b356b;
 
   font-size: 34px;
 
@@ -670,26 +676,12 @@ body {
 }
 
 .luxury-card p {
-  color: #0d1b2a !important;
+  color: #0f2741 !important;
   font-size: 16px;
   margin: 0;
   position: relative;
   z-index: 2;
-}
-
-.feature-card h4 {
-  color: #1b356b;
-
-  font-size: 18px;
-  margin-bottom: 6px;
-
-  font-family: "Poppins", sans-serif;
-}
-
-.feature-card p {
-  margin: 0;
-  font-size: 14px;
-  color: #b8c7d6;
+  font-weight: 700;
 }
 
 /* =========================
@@ -992,42 +984,60 @@ body {
   transition: 0.4s;
 }
 
+/* ADDON LIST */
+
 .addon-list {
   list-style: none;
-  margin: 10px 0 0;
+  margin: 14px 0 0;
   padding: 0;
 
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
 }
 
 .addon-list li {
   display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.addon-icon {
+  width: 38px;
+  height: 38px;
+
+  min-width: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: rgba(212, 175, 55, 0.12);
+
+  color: #b98b11;
+
+  font-size: 18px;
+}
+
+.addon-info {
+  display: flex;
   flex-direction: column;
-  gap: 3px;
-
-  padding-bottom: 10px;
-  border-bottom: 1px dashed #e5e7eb;
 }
 
-.addon-list li:last-child {
-  border-bottom: none;
-  padding-bottom: 0;
-}
-
-.addon-list strong {
-  font-size: 14px;
+.addon-info strong {
   color: #1b356b;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 2px;
 }
 
-.addon-list span {
+.addon-info span {
+  color: #5b6472;
   font-size: 13px;
-  color: #6b7280;
-  line-height: 1.4;
+  line-height: 1.5;
 }
-
 /* =========================
    WHY CHOOSE US SECTION
 ========================= */
@@ -2805,7 +2815,7 @@ RESPONSIVE
     0 35px 60px rgba(0, 0, 0, 0.12),
     inset 0 2px 4px rgba(255, 255, 255, 0.2);
 
-  transform: perspective(1800px) rotateY(-10deg) rotateX(5deg);
+  transform: perspective(1800px) rotateY(10deg) rotateX(5deg);
 
   transition: 0.6s ease;
 }
