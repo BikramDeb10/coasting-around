@@ -2758,17 +2758,70 @@ RESPONSIVE
    LIVE TRACKING SECTION
 ========================= */
 
+/* =========================
+   LIVE TRACKING SECTION
+========================= */
+
 .tracking-section {
   position: relative;
 
   padding: 140px 8%;
 
-  background: #f7f8fa;
-
   overflow: hidden;
+
+  background-image: url("../assest/images/189362.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
+/* DARK PREMIUM OVERLAY */
+
+.tracking-section::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    135deg,
+    rgba(4, 11, 20, 0.705) 0%,
+    rgba(7, 17, 31, 0.76) 40%,
+    rgba(13, 27, 42, 0.801) 100%
+  );
+
+  z-index: 1;
+}
+
+/* GOLDEN GLOW */
+
+.tracking-section::after {
+  content: "";
+
+  position: absolute;
+
+  width: 700px;
+  height: 700px;
+
+  border-radius: 50%;
+
+  background: rgba(212, 175, 55, 0.12);
+
+  filter: blur(140px);
+
+  top: -200px;
+  right: -150px;
+
+  z-index: 1;
+}
+
+/* CONTENT ABOVE OVERLAY */
+
 .tracking-container {
+  position: relative;
+  z-index: 2;
+
   max-width: 1400px;
 
   margin: auto;
@@ -2781,7 +2834,6 @@ RESPONSIVE
 
   align-items: center;
 }
-
 /* PHONE SIDE */
 
 .tracking-phone-side {
@@ -2975,7 +3027,7 @@ RESPONSIVE
 
   line-height: 1.05;
 
-  color: #08254d;
+  color: #ffffff;
 
   margin: 20px 0;
 
@@ -2983,7 +3035,7 @@ RESPONSIVE
 }
 
 .tracking-content p {
-  color: #666;
+  color: #e6e6e6;
 
   line-height: 1.9;
 
@@ -3013,7 +3065,7 @@ RESPONSIVE
 
   font-size: 17px;
 
-  color: #08254d;
+  color: #e4e4e4;
 
   font-weight: 600;
 }
